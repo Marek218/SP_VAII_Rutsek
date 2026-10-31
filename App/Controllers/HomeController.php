@@ -54,4 +54,16 @@ class HomeController extends BaseController
     {
         return $this->html();
     }
+
+    public function catalog(Request $request): Response
+    {
+        return $this->html();
+    }
+    public function collection(Request $request): Response
+    {
+        return $this->html();
+    }
+    public function profile(Request $request): Response{
+        return $this->html();
+    }
 }

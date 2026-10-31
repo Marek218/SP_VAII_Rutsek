@@ -95,7 +95,12 @@ header {
     color: var(--normal-text-color);
 }
 
-svg {
+.nav-item a {
+    text-decoration: none;
+    color: red;
+}
+
+svg  a{
     width: 18px;
     height: 18px;
     color: #81aaff;

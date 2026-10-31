@@ -99,7 +99,7 @@ a {
     margin-bottom: 19px;
     border-radius: 7px;
     background: linear-gradient(90deg, rgba(16, 27, 40, 0.92) 0%, rgba(16, 27, 40, 0.55) 52%, rgba(16, 27, 40, 0.15) 100%),
-    url("images/banner.png") center / cover no-repeat;
+    url("../../html/images/banner.png") center / cover no-repeat;
 }
 
 .hero-copy {
