@@ -1,4 +1,8 @@
 <?php
+
+/** @var \Framework\Support\LinkGenerator $link */
 ?>
 
-<strong>Hry vo vašej zbierke</strong>
+<div class="row">
+    <strong>Hry vo Vasej zbierke</strong>
+</div>

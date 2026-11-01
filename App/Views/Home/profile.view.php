@@ -1,4 +1,8 @@
 <?php
+
+/** @var \Framework\Support\LinkGenerator $link */
 ?>
 
-<strong>Vas profil</strong>
+<div class="row">
+    <strong>Vas profil</strong>
+</div>
