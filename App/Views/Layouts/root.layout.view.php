@@ -4,16 +4,6 @@
 /** @var \Framework\Auth\AppUser $user */
 /** @var \Framework\Support\LinkGenerator $link */
 
-$currentController = strtolower($_GET['c'] ?? 'home');
-$currentAction = strtolower($_GET['a'] ?? 'index');
-
-$isActive = static function (string $controller, string $action) use (
-        $currentController,
-        $currentAction
-): bool {
-    return $currentController === strtolower($controller)
-            && $currentAction === strtolower($action);
-};
 ?>
 <!DOCTYPE html>
 <html lang="sk">
@@ -42,9 +32,7 @@ $isActive = static function (string $controller, string $action) use (
         <span class="brand-name">PlayStation <small>Games Tracker</small></span>
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Hlavná navigácia">
-        <a class="nav-item<?= $isActive('home', 'index') ? ' active' : '' ?>"
-           href="<?= $link->url('home.index') ?>"
-                <?= $isActive('home', 'index') ? 'aria-current="page"' : '' ?>>
+        <a class="nav-item" href="<?= $link->url('home.index') ?>">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                  stroke-linecap="round" stroke-linejoin="round">
                 <rect width="7" height="9" x="3" y="3" rx="1"/>
@@ -54,9 +42,7 @@ $isActive = static function (string $controller, string $action) use (
             </svg>
             <span>Prehľad</span>
         </a>
-        <a class="nav-item<?= $isActive('home', 'catalog') ? ' active' : '' ?>"
-           href="<?= $link->url('home.catalog') ?>"
-                <?= $isActive('home', 'catalog') ? 'aria-current="page"' : '' ?>>
+        <a class="nav-item" href="<?= $link->url('home.catalog') ?>">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                  stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
@@ -64,9 +50,7 @@ $isActive = static function (string $controller, string $action) use (
             </svg>
             <span>Katalóg hier</span>
         </a>
-        <a class="nav-item<?= $isActive('home', 'collection') ? ' active' : '' ?>"
-           href="<?= $link->url('home.collection') ?>"
-                <?= $isActive('home', 'collection') ? 'aria-current="page"' : '' ?>>
+        <a class="nav-item" href="<?= $link->url('home.collection') ?>">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                  stroke-linecap="round" stroke-linejoin="round">
                 <path d="m16 6 4 14"/>
@@ -76,9 +60,7 @@ $isActive = static function (string $controller, string $action) use (
             </svg>
             <span>Moja zbierka</span>
         </a>
-        <a class="nav-item<?= $isActive('home', 'profile') ? ' active' : '' ?>"
-           href="<?= $link->url('home.profile') ?>"
-                <?= $isActive('home', 'profile') ? 'aria-current="page"' : '' ?>>
+        <a class="nav-item" href="<?= $link->url('home.profile') ?>">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                  stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="8" r="5"/>
