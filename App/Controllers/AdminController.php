@@ -37,8 +37,18 @@ class AdminController extends BaseController
      *
      * @return Response Returns a response object containing the rendered HTML.
      */
+
     public function index(Request $request): Response
     {
         return $this->html();
     }
+    public function games(Request $request): Response
+    {
+        return $this->html();
+    }
+    public function developers(Request $request): Response
+    {
+        return $this->html(['developers' => \App\Models\Developer::getAll()]);
+    }
+
 }

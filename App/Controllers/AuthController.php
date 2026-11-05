@@ -8,7 +8,6 @@ use Framework\Core\BaseController;
 use Framework\Http\Request;
 use Framework\Http\Responses\Response;
 use Framework\Http\Responses\ViewResponse;
-
 /**
  * Class AuthController
  *

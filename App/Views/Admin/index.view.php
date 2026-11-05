@@ -1,16 +1,5 @@
 <?php
+/** @var \Framework\Support\View $view */
 
-/** @var \Framework\Support\LinkGenerator $link */
-/** @var \Framework\Auth\AppUser $user */
+$view->setLayout('admin');
 ?>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <div>
-                Welcome, <strong><?= e($user->getName()) ?></strong>!<br><br>
-                This part of the application is accessible only after logging in.
-            </div>
-        </div>
-    </div>
-</div>

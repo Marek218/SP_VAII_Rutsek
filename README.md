@@ -69,7 +69,7 @@ Entita uchováva údaje o používateľovi aplikácie.
 
 Entita predstavuje jednu hru, ktorú si používatelia môžu prezerať a pridávať do svojej zbierky alebo zoznamu želaní.
 
-- Atribúty: `id`, `name`, `release_year`, `cover_image`, `developer_id`, `description`
+- Atribúty: `id`, `name`, `release_date`, `cover_image`, `developer_id`, `description`
 - Vzťahy: Hra môže byť súčasťou zbierok a zoznamov želaní viacerých používateľov. Každá hra má priradeného vývojára
 
 ### Zbierka
