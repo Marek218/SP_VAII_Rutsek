@@ -47,14 +47,20 @@ $view->setLayout('admin');
                 <form id="<?= e($formId) ?>" method="POST" action="<?= $link->url('developer.save') ?>">
                     <input type="hidden" name="id" value="<?= e($id) ?>">
                 </form>
-                <input type="text" name="name" form="<?= e($formId) ?>" value="<?= e($developer->getName()) ?>" required>
+                <label>
+                    <input type="text" name="name" form="<?= e($formId) ?>" value="<?= e($developer->getName()) ?>" required>
+                </label>
             </td>
 
             <td>
-                <input type="text" name="country" form="<?= e($formId) ?>" value="<?= e($developer->getCountry()) ?>">
+                <label>
+                    <input type="text" name="country" form="<?= e($formId) ?>" value="<?= e($developer->getCountry()) ?>">
+                </label>
             </td>
             <td>
-                <input type="url" name="website" form="<?= e($formId) ?>" value="<?= e($developer->getWebsite()) ?>">
+                <label>
+                    <input type="url" name="website" form="<?= e($formId) ?>" value="<?= e($developer->getWebsite()) ?>">
+                </label>
             </td>
 
             <td>
