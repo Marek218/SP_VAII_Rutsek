@@ -1,5 +1,6 @@
 <?php
-/** @var \Framework\Support\View $view */
+/** @var View $view */
+
+use Framework\Support\View;
 
 $view->setLayout('admin');
-?>

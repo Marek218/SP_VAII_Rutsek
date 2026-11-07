@@ -26,16 +26,6 @@ body {
     font-weight: 500;
 }
 
-.content-placeholder {
-    display: grid;
-    min-height: 420px;
-    place-items: center;
-    border: 1px dashed var(--border-outline-color);
-    border-radius: 12px;
-    background-color: var(--border-fill-color);
-    color: #7f8da3;
-}
-
 header {
     display: flex;
     align-items: center;
@@ -181,14 +171,6 @@ h1{
         padding: 16px 0 24px;
     }
 
-    .content-placeholder {
-        min-height: calc(100vh - 220px);
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-
     .account {
         margin-left: auto;
     }
@@ -221,15 +203,4 @@ h1{
         width: 19px;
         height: 19px;
     }
-}
-
-.content-placeholder {
-    display: grid;
-    min-height: calc(100vh - 150px);
-    place-items: center;
-    box-sizing: border-box;
-    border: 1px dashed var(--border-outline-color);
-    border-radius: 14px;
-    background-color: var(--border-fill-color);
-    color: #7f8da3;
 }
