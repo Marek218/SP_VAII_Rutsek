@@ -1,4 +1,4 @@
-/* Tabuľka developerov */
+/** Styles for the table and its elements. **/
 table {
     width: 100%;
     margin-top: 20px;
@@ -12,92 +12,111 @@ table {
     font-size: 13px;
 }
 
-/* Hlavička tabuľky */
-table thead {
-    background-color: #1d2736;
-}
-
 table th {
     padding: 14px 16px;
     border-bottom: 1px solid var(--border-outline-color);
     color: var(--grey-text-color);
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-align: left;
     text-transform: uppercase;
 }
 
-/* Bunky */
 table td {
     padding: 14px 16px;
     border-bottom: 1px solid rgba(42, 51, 66, 0.7);
-    vertical-align: middle;
 }
 
-/* Posledný riadok už nemá spodnú čiaru */
-table tbody tr:last-child td {
-    border-bottom: 0;
-}
-
-/* Efekt pri prejdení myšou */
-table tbody tr {
-    transition: background-color 0.2s ease;
-}
 
 table tbody tr:hover {
     background-color: #1c2635;
 }
 
-/* Názov developera */
 table td:first-child {
     color: var(--normal-text-color);
     font-weight: 600;
 }
 
-/* Webstránka */
-table td a {
-    color: #81aaff;
-    text-decoration: none;
-    word-break: break-word;
-}
+/** Styles for the edit form within the table. **/
 
-table td a:hover,
-table td a:focus-visible {
-    color: #a9c5ff;
-    text-decoration: underline;
-}
-
-/* Tabuľka na menších obrazovkách */
-@media (max-width: 650px) {
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    table th,
-    table td {
-        padding: 12px;
-    }
-}
-
-/* Skrytie checkboxu, ale zachovanie prístupnosti */
-.edit-toggle {
-    position: absolute;
-    opacity: 0;
-}
-
-/* Normálny režim */
-.developer-edit-row {
-    display: none;
-}
-
-/* Ak je checkbox zaškrtnutý */
-.developer-entry:has(.edit-toggle:checked) .developer-row {
+.edit-toggle ,
+.developer-edit-row,
+.developer-entry:has(.edit-toggle:checked) .developer-row ,
+.add-developer-toggle
+{
     display: none;
 }
 
 .developer-entry:has(.edit-toggle:checked) .developer-edit-row {
     display: table-row;
+}
+
+/** Forms for adding a new developer */
+
+.add-developer {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.add-developer-form {
+    display: none;
+    gap: 12px;
+    align-items: end;
+    padding: 15px;
+    border: 1px solid var(--border-outline-color);
+    border-radius: 8px;
+    background-color: var(--border-fill-color);
+}
+
+.add-developer-form input,
+.developer-edit-row input {
+    padding: 8px;
+    border: 1px solid var(--border-outline-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--normal-text-color);
+}
+
+.add-developer-toggle:checked ~ .add-developer-button {
+    display: none;
+}
+
+.add-developer-toggle:checked ~ .add-developer-form {
+    display: flex;
+}
+
+/* Buttons */
+.edit-button,
+.delete-button,
+.add-developer-button,
+.cancel-button,
+.add-developer-form button,
+.developer-edit-row button {
+    border: 1px solid var(--border-outline-color);
+    background-color: var(--border-fill-color);
+    color: var(--normal-text-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover,
+.delete-button:hover,
+.add-developer-button:hover,
+.add-developer-form button:hover,
+.developer-edit-row button:hover,
+.cancel-button:hover {
+    filter: brightness(1.2);
+}
+
+.delete-form {
+    display: inline;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 700px) {
+    .add-developer-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
