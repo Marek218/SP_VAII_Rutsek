@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use Exception;
 use Framework\Core\BaseController;
 use Framework\Http\Request;
 use Framework\Http\Responses\Response;
@@ -42,10 +43,18 @@ class AdminController extends BaseController
     {
         return $this->html();
     }
+
+    /**
+     * @throws Exception
+     */
     public function games(Request $request): Response
     {
-        return $this->html();
+        return $this->html(['games' => \App\Models\Game::getAll(), 'developers' => \App\Models\Developer::getAll()]);
     }
+
+    /**
+     * @throws Exception
+     */
     public function developers(Request $request): Response
     {
         return $this->html(['developers' => \App\Models\Developer::getAll()]);

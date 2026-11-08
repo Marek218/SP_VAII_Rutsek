@@ -8,7 +8,7 @@ use Exception;
 use Framework\Core\BaseController;
 use Framework\Http\Request;
 use Framework\Http\Responses\Response;
-use HttpException;
+use Framework\Http\HttpException;
 
 class DeveloperController extends BaseController
 {
@@ -33,8 +33,41 @@ class DeveloperController extends BaseController
      */
     public function save(Request $request): Response
     {
-        $developer = (int)$request->value('id') > 0 ? $this->findDeveloper($request) : new Developer();
-        $developer->setFromRequest($request);
+        if (!$request->isPost()) {
+            throw new HttpException(405);
+        }
+
+        $name = trim((string)$request->value('name'));
+        $country = trim((string)$request->value('country'));
+        $website = trim((string)$request->value('website'));
+
+        if ($name === '') {
+            throw new HttpException(400, 'Názov developera je povinný.');
+        }
+
+        if (mb_strlen($name) > 100) {
+            throw new HttpException(400, 'Názov developera môže mať najviac 100 znakov.');
+        }
+
+        if (mb_strlen($country) > 100) {
+            throw new HttpException(400, 'Krajina môže mať najviac 100 znakov.');
+        }
+
+        if ($website !== '' && !filter_var($website, FILTER_VALIDATE_URL)) {
+            throw new HttpException(400, 'Webová stránka nemá platný formát.');
+        }
+
+        if (mb_strlen($website) > 250) {
+            throw new HttpException(400, 'Webová stránka môže mať najviac 250 znakov.');
+        }
+
+        $developer = (int)$request->value('id') > 0
+            ? $this->findDeveloper($request)
+            : new Developer();
+
+        $developer->setName($name);
+        $developer->setCountry($country);
+        $developer->setWebsite($website);
         $developer->save();
 
         return $this->redirect($this->url('admin.developers'));

@@ -11,8 +11,9 @@ class Game extends Model
     protected ?string $name = null;
     protected ?int $release_date = null;
     protected ?string $cover_image = null;
-    protected ?Developer $developer_id = null;
+    protected ?int $developer_id = 0;
     protected ?string $description = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,12 +54,12 @@ class Game extends Model
         $this->cover_image = $cover_image;
     }
 
-    public function getDeveloperId(): ?Developer
+    public function getDeveloperId(): ?int
     {
         return $this->developer_id;
     }
 
-    public function setDeveloperId(?Developer $developer_id): void
+    public function setDeveloperId(?int $developer_id): void
     {
         $this->developer_id = $developer_id;
     }

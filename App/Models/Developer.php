@@ -54,5 +54,4 @@ class Developer extends Model
     {
         $this->website = $website;
     }
-
 }

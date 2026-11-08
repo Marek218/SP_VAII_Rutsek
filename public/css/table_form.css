@@ -1,0 +1,293 @@
+/** Table styles **/
+table {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid var(--border-outline-color);
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    background-color: var(--border-fill-color);
+    color: var(--normal-text-color);
+    font-size: 13px;
+}
+
+table th {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-outline-color);
+    color: var(--grey-text-color);
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(42, 51, 66, 0.7);
+}
+
+table tbody tr:hover {
+    background-color: #1c2635;
+}
+
+table td:first-child {
+    color: var(--normal-text-color);
+    font-weight: 600;
+}
+
+.game-table {
+    table-layout: fixed;
+}
+
+.game-table th:nth-child(1),
+.game-table td:nth-child(1) {
+    width: 14%;
+}
+
+.game-table th:nth-child(2),
+.game-table td:nth-child(2) {
+    width: 9%;
+}
+
+.game-table th:nth-child(3),
+.game-table td:nth-child(3) {
+    width: 22%;
+}
+
+.game-table th:nth-child(4),
+.game-table td:nth-child(4) {
+    width: 15%;
+}
+
+.game-table th:nth-child(5),
+.game-table td:nth-child(5) {
+    width: 25%;
+}
+
+.game-table th:nth-child(6),
+.game-table td:nth-child(6) {
+    width: 15%;
+}
+
+.game-cover-cell {
+    width: 110px;
+    min-width: 110px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.game-cover-image {
+    display: block;
+    width: 80px;
+    height: 105px;
+    margin: 0 auto;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid var(--border-outline-color);
+    background-color: var(--background-color);
+}
+
+.game-cover-fallback {
+    display: none;
+    color: var(--grey-text-color);
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+/** Edit form visibility **/
+.edit-toggle,
+.developer-edit-row,
+.game-edit-row,
+.add-developer-toggle,
+.add-game-toggle,
+.developer-entry:has(.edit-toggle:checked) .developer-row,
+.game-entry:has(.edit-toggle:checked) .game-row {
+    display: none;
+}
+
+.developer-entry:has(.edit-toggle:checked) .developer-edit-row,
+.game-entry:has(.edit-toggle:checked) .game-edit-row {
+    display: table-row;
+}
+
+/** Add forms **/
+.add-developer,
+.add-game {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 30px 20px 0;
+}
+
+.add-developer-form,
+.add-game-form {
+    display: none;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 15px;
+    border: 1px solid var(--border-outline-color);
+    border-radius: 8px;
+    background-color: var(--border-fill-color);
+}
+
+.add-developer-form > label,
+.add-game-form > label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.add-game-form textarea {
+    min-height: 58px;
+    max-height: 90px;
+    resize: vertical;
+}
+
+.add-game-form button,
+.add-game-form .cancel-button {
+    align-self: flex-end;
+    font-size: inherit;
+}
+
+.add-developer-toggle:checked ~ .add-developer-form,
+.add-game-toggle:checked ~ .add-game-form {
+    display: flex;
+}
+
+.add-developer-toggle:checked ~ .add-developer-button,
+.add-game-toggle:checked ~ .add-game-button {
+    display: none;
+}
+
+/** Form inputs **/
+.add-developer-form input,
+.add-developer-form select,
+.add-developer-form textarea,
+.developer-edit-row input,
+.developer-edit-row select,
+.developer-edit-row textarea,
+.add-game-form input,
+.add-game-form select,
+.add-game-form textarea,
+.game-edit-row input,
+.game-edit-row select,
+.game-edit-row textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 36px;
+    padding: 8px 10px;
+    border: 1px solid var(--border-outline-color);
+    border-radius: 4px;
+    outline: none;
+    background-color: var(--background-color);
+    color: var(--normal-text-color);
+    font: inherit;
+}
+
+.add-developer-form textarea,
+.developer-edit-row textarea,
+.add-game-form textarea,
+.game-edit-row textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.add-developer-form select,
+.developer-edit-row select,
+.add-game-form select,
+.game-edit-row select {
+    appearance: auto;
+    cursor: pointer;
+}
+
+.add-developer-form,
+.add-game-form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+/** Input focus **/
+.add-developer-form input:focus,
+.add-developer-form select:focus,
+.add-developer-form textarea:focus,
+.developer-edit-row input:focus,
+.developer-edit-row select:focus,
+.developer-edit-row textarea:focus,
+.add-game-form input:focus,
+.add-game-form select:focus,
+.add-game-form textarea:focus,
+.game-edit-row input:focus,
+.game-edit-row select:focus,
+.game-edit-row textarea:focus {
+    border-color: #81aaff;
+    box-shadow: 0 0 0 2px rgba(129, 170, 255, 0.15);
+}
+
+/** Buttons **/
+.edit-button,
+.delete-button,
+.add-developer-button,
+.add-game-button,
+.cancel-button,
+.add-developer-form button,
+.add-game-form button,
+.developer-edit-row button,
+.game-edit-row button {
+    padding: 8px 12px;
+    border: 1px solid var(--border-outline-color);
+    border-radius: 5px;
+    background-color: var(--border-fill-color);
+    color: var(--normal-text-color);
+    cursor: pointer;
+}
+
+.edit-button:hover,
+.delete-button:hover,
+.add-developer-button:hover,
+.add-game-button:hover,
+.cancel-button:hover,
+.add-developer-form button:hover,
+.add-game-form button:hover,
+.developer-edit-row button:hover,
+.game-edit-row button:hover {
+    filter: brightness(1.2);
+}
+
+.delete-form {
+    display: inline;
+}
+.edit-button,
+.delete-button,
+.add-developer-button,
+.add-game-button,
+.cancel-button,
+.add-developer-form button,
+.add-game-form button,
+.developer-edit-row button,
+.game-edit-row button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 36px;
+    min-width: 76px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-outline-color);
+    border-radius: 5px;
+    background-color: var(--border-fill-color);
+    color: var(--normal-text-color);
+    font: inherit;
+    line-height: 18px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+/** Responsive design **/
+@media (max-width: 700px) {
+    .add-developer-form,
+    .add-game-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
