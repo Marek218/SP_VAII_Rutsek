@@ -26,6 +26,8 @@ body {
     font-weight: 500;
 }
 
+
+
 header {
     display: flex;
     align-items: center;
@@ -115,8 +117,8 @@ svg {
 .avatar-button:focus-visible  {
     background-color: #283b61;
 }
-h1{
-    color: var(--grey-text-color);
+h1 {
+    color: var(--normal-text-color);
 }
 .account-menu {
     position: absolute;
@@ -169,6 +171,16 @@ h1{
         width: auto;
         margin: 0 16px;
         padding: 16px 0 24px;
+    }
+
+    .catalog-header {
+        align-items: start;
+        flex-direction: column;
+        margin-top: 8px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
     }
 
     .account {

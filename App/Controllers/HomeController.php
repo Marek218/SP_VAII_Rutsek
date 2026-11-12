@@ -57,7 +57,9 @@ class HomeController extends BaseController
 
     public function catalog(Request $request): Response
     {
-        return $this->html();
+        return $this->html([
+            'games' => \App\Models\Game::getAll(orderBy: 'name ASC'),
+        ]);
     }
 
     public function collection(Request $request): Response

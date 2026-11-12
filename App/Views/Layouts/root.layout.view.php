@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="<?= $link->asset('css/style.css') ?>">
     <link rel="stylesheet" href="<?= $link->asset('css/dashboard.css') ?>">
     <link rel="stylesheet" href="<?= $link->asset('css/table_form.css') ?>">
+    <link rel="stylesheet" href="<?= $link->asset('css/catalog.css') ?>">
     <script src="<?= $link->asset('js/script.js') ?>"></script>
 </head>
 <body>
